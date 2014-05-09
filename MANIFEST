@@ -9,4 +9,5 @@ gender_detector/index.py
 gender_detector/name.py
 gender_detector/data/ukprocessed.csv
 gender_detector/data/usprocessed.csv
+gender_detector/tests/__init__.py
 gender_detector/tests/test.py
