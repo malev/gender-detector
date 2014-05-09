@@ -39,21 +39,8 @@ class GenderDetector:
         return Name(name, gender, male_count, female_count).guess()
 
     def _format_name(self, name):
-        name.strip()
+        name = name.strip()
         return name[0].upper() + name[1:].lower().strip()
-
-
-def AgrestiCoullLower(n=0,k=0):
-    conf = 0.05              # 95% confidence interval
-    kappa = 2.24140273       # In general, kappa = ierfc(conf/2)*sqrt(2)
-    kest= k + kappa ** 2/ 2
-    nest= n + kappa ** 2
-    pest = kest / nest;
-    radius = kappa * sqrt(pest*(1-pest)/nest)
-    lower_bound = max(0,pest-radius)
-    upper_bound = min(1,pest+radius)
-
-    return [lower_bound, upper_bound]
 
 
 if __name__ == "__main__":
