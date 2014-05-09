@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: gender-detector
+Version: 0.0.1
+Summary: A gender detection tool
+Home-page: http://codingnews.org
+Author: Marcos Vanetta
+Author-email: marcosvanetta@gmail.com
+License: GLP2
+Description: Gender detection library
+Platform: UNKNOWN
