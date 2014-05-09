@@ -6,6 +6,7 @@ Library for guessing a person's gender by their first name. This library is base
 
 Nothing too fancy, just install and:
 
+    from gender_detector import GenderDetector
     detector = GenderDetector('us')
     detector.guess('Marcos') # => 'male'
 
