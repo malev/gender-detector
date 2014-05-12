@@ -9,8 +9,8 @@ class Country:
     Arguments:
     arg1 -- country code
     '''
-    def __init__(self, country='us'):
-        self.country = country.lower()
+    def __init__(self, country):
+        self.country = country
         self._validate_country()
 
     def guess(self, row):
@@ -20,16 +20,16 @@ class Country:
             'male_count': row[2],
             'female_count': row[3]
         }
-        return self._guesser_map()[self.country](name, opt)
+        return self._guesser_method()(name, opt)
 
-    def _guesser_map(self):
+    def _guesser_method(self):
         # { country : method }
         return {
             'ar': self.no_method,
             'uk': self.binomy,
             'ur': self.no_method,
             'us': self.binomy
-        }
+        }[self.country]
 
     def no_method(self, name, opt={}):
         return opt['gender']

@@ -11,7 +11,6 @@
 import csv
 from country import Country
 from index import Index
-from name import Name
 
 
 class GenderDetector:
@@ -34,10 +33,10 @@ class GenderDetector:
 
     def _guess(self, row):
         gender = self.country.guess(row)
-        if gender or gender == 'unknown':
-            return self.unknown_value
-        else:
+        if gender in ['male', 'female']:
             return gender
+        else:
+            return self.unknown_value
 
     def _format_name(self, name):
         name = name.strip()
