@@ -9,14 +9,14 @@ import os.path
 from gender_detector import GenderDetector
 from gender_detector.country import Country
 from gender_detector.index import Index
-# from binomy import Binomy
+from gender_detector.binomy import Binomy
 
 
-# class TestBinomy(unittest.TestCase):
-#     def test_enough_confidence(self):
-#         self.assertTrue(not Binomy(5,5).enough_confidence())
-#         self.assertTrue(not Binomy(0,1).enough_confidence())
-#         self.assertTrue(Binomy(0,6).enough_confidence())
+class TestBinomy(unittest.TestCase):
+    def test_enough_confidence(self):
+        self.assertTrue(not Binomy(5,5).enough_confidence())
+        self.assertTrue(not Binomy(0,1).enough_confidence())
+        self.assertTrue(Binomy(0,6).enough_confidence())
 
 
 class TestCountry(unittest.TestCase):
