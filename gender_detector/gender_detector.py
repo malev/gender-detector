@@ -22,21 +22,22 @@ class GenderDetector:
 
     def guess(self, name):
         name = self._format_name(name)
+
         initial_position = self.index(name[0])
         with open(self.country.file()) as csvfile:
             csvfile.seek(initial_position)
             reader = csv.reader(csvfile)
-            for line in reader:
-                if line[0] == name:
-                    return self._guesser(line)
+            for row in reader:
+                if row[0] == name:
+                    return self._guess(row)
             return self.unknown_value
 
-    def _guesser(self, row):
-        name = row[0]
-        gender = row[4]
-        male_count = int(row[2])
-        female_count = int(row[3])
-        return Name(name, gender, male_count, female_count).guess()
+    def _guess(self, row):
+        gender = self.country.guess(row)
+        if gender or gender == 'unknown':
+            return self.unknown_value
+        else:
+            return gender
 
     def _format_name(self, name):
         name = name.strip()
