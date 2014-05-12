@@ -1,8 +1,22 @@
 #!/usr/bin/env python
 
+import sys
 import unittest
 import os.path
-from gender_detector import Country, Name, Index, GenderDetector
+
+# sys.path.append("../")
+
+from gender_detector import GenderDetector
+from gender_detector.country import Country
+from gender_detector.index import Index
+# from binomy import Binomy
+
+
+# class TestBinomy(unittest.TestCase):
+#     def test_enough_confidence(self):
+#         self.assertTrue(not Binomy(5,5).enough_confidence())
+#         self.assertTrue(not Binomy(0,1).enough_confidence())
+#         self.assertTrue(Binomy(0,6).enough_confidence())
 
 
 class TestCountry(unittest.TestCase):
@@ -15,17 +29,9 @@ class TestCountry(unittest.TestCase):
     def test_non_existing_country(self):
         self.assertRaises(RuntimeError, Country, 'br')
 
-
-class TestName(unittest.TestCase):
-    def test_guess_gender(self):
-        name = Name('Marcos', 'male', 10, 0)
-        self.assertEqual('male', name.guess())
-
-        name = Name('Mary', 'female', 0, 10)
-        self.assertEqual('female', name.guess())
-
-        name = Name('whoknows', 'unknown', 0, 0)
-        self.assertEqual('unknown', name.guess())
+    def test_guesser_method(self):
+        country = Country('ar')
+        self.assertEqual(country._guesser_method().__name__, 'no_method')
 
 
 class TestIndex(unittest.TestCase):
@@ -47,7 +53,7 @@ class TestGenderDetector(unittest.TestCase):
             )
 
     def test_guessing(self):
-        detector = GenderDetector()
+        detector = GenderDetector('us')
         self.assertEqual(detector.guess('Marcos'), 'male')
 
 
