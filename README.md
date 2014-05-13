@@ -4,7 +4,7 @@ Gender detector is a Python library for guessing a person's gender by his/her fi
 
 **This is still in beta stages, use with precaution**
 
-© 2014 Marcos Vanetta. Available under GPL2 License. See LICENSE.md.
+© 2014 Marcos Vanetta. Available under GPL2 License. See LICENSE.
 
 # Datasets
 
