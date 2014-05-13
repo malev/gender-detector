@@ -27,7 +27,7 @@ class Country:
         return {
             'ar': self.no_method,
             'uk': self.binomy,
-            'ur': self.no_method,
+            'uy': self.no_method,
             'us': self.binomy
         }[self.country]
 
