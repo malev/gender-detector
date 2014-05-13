@@ -3,3 +3,4 @@ include README.md
 include gender_detector/data/ukprocessed.csv
 include gender_detector/data/usprocessed.csv
 include gender_detector/data/arprocessed.csv
+include gender_detector/data/urprocessed.csv
