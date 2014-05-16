@@ -8,8 +8,8 @@ Gender detector is a Python library for guessing a person's gender by his/her fi
 
 # Datasets
 
-* UK, from [OpenGenderTracking project](opengendertracking.github.com)
-* US, from [OpenGenderTracking project](opengendertracking.github.com)
+* UK, from [OpenGenderTracking project](http://opengendertracking.github.com)
+* US, from [OpenGenderTracking project](http://opengendertracking.github.com)
 * AR, from [Names query site](http://www.buenosaires.gob.ar/areas/registrocivil/nombres/busqueda/buscador_nombres.php?menu_id=16082) from the goverment of the City of Buenos Aires. **this is a small sample, use with precaution!**.
 * UY, from [Civil registry](https://catalogodatos.gub.uy/dataset/partidas-de-registro-civil-de-montevideo) in Montevideo. Same as in AR, **Use with precaution!**
 
