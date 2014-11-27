@@ -1,5 +1,5 @@
 include LICENSE
-include README.md
+include README.rst
 include gender_detector/data/ukprocessed.csv
 include gender_detector/data/usprocessed.csv
 include gender_detector/data/arprocessed.csv
