@@ -1,0 +1,14 @@
+package: gender-detector
+
+platform:
+  - linux-64
+
+engine:
+  - python=2
+
+install:
+  - conda install nose
+
+test:
+  - nosetests
+

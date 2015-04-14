@@ -1,0 +1,17 @@
+package:
+  name: gender_detector
+  version: '0.0.6'
+requirements:
+  build:
+    - python
+  run:
+    - python
+test:
+  requires:
+    - nose
+  commands:
+    - nosetests
+about:
+  home: https://github.com/malev/gender-detector/
+  license: GNU
+  summary: "Library for guessing a person's gender by their first name."
