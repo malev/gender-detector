@@ -1,8 +1,8 @@
 from collections import OrderedDict
-from country import Country
+from .country import Country
 
 
-class Index:
+class Index(object):
     """
     Generate index based on the position in bytes
     of every letter in the alphabet.
@@ -22,7 +22,7 @@ class Index:
     def _generate_index(self):
         self.indices = OrderedDict()
         with open(self.country.file()) as file:
-            total = file.readline() # Omit headers line
+            total = file.readline()  # Omit headers line
             for line in file:
                 if line[0] not in self.indices:
                     self.indices[line[0]] = len(total)
@@ -30,4 +30,4 @@ class Index:
 
 
 if __name__ == "__main__":
-    print __doc__
+    print(__doc__)

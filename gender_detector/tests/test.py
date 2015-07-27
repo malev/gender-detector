@@ -6,7 +6,7 @@ import os.path
 
 # sys.path.append("../")
 
-from gender_detector import GenderDetector
+from ..gender_detector import GenderDetector
 from gender_detector.country import Country
 from gender_detector.index import Index
 from gender_detector.binomy import Binomy

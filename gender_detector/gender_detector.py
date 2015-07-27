@@ -9,8 +9,8 @@
 
 
 import csv
-from country import Country
-from index import Index
+from .country import Country
+from .index import Index
 
 
 class GenderDetector:
@@ -44,4 +44,4 @@ class GenderDetector:
 
 
 if __name__ == "__main__":
-    print __doc__
+    print(__doc__)
