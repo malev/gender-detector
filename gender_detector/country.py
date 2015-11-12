@@ -13,12 +13,12 @@ class Country:
         self.country = country
         self._validate_country()
 
-    def guess(self, row):
-        name = row[0]
+    def guess(self, name_info):
+        name = name_info['name']
         opt = {
-            'gender': row[4],
-            'male_count': row[2],
-            'female_count': row[3]
+            'gender': name_info['gender'],
+            'male_count': name_info['male_count'],
+            'female_count': name_info['female_count']
         }
         return self._guesser_method()(name, opt)
 

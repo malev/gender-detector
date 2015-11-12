@@ -1,4 +1,5 @@
-from gender_detector import *
+from __future__ import absolute_import
+from .gender_detector import *
 
 __copyright__ = 'Copyright (c) 2014 Marcos Vanetta'
 

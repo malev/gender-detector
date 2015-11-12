@@ -8,7 +8,6 @@ import os.path
 
 from ..gender_detector import GenderDetector
 from gender_detector.country import Country
-from gender_detector.index import Index
 from gender_detector.binomy import Binomy
 
 
@@ -34,15 +33,6 @@ class TestCountry(unittest.TestCase):
         self.assertEqual(country._guesser_method().__name__, 'no_method')
 
 
-class TestIndex(unittest.TestCase):
-    def test_lazy_index(self):
-        # Generate index only when it's needed
-        index = Index()
-        self.assertEqual(len(index.indices), 0)
-        position = index('A')
-        self.assertNotEqual(len(index.indices), 0)
-        self.assertEqual(position, 87)
-
 class TestGenderDetector(unittest.TestCase):
     def test_format_name(self):
         detector = GenderDetector()
@@ -52,9 +42,25 @@ class TestGenderDetector(unittest.TestCase):
                 'Marcos'
             )
 
-    def test_guessing(self):
+    def test_us_guessing(self):
+        # test scanning csv file for name
         detector = GenderDetector('us')
         self.assertEqual(detector.guess('Marcos'), 'male')
+        
+    def test_ar_guessing(self):
+        # test scanning csv file for name
+        detector = GenderDetector('ar')
+        self.assertEqual(detector.guess('Zulema'), 'female')
+        
+    def test_uk_guessing(self):
+        # test scanning csv file for name
+        detector = GenderDetector('uk')
+        self.assertEqual(detector.guess('Xara'), 'female')
+
+    def test_uy_guessing(self):
+        # test scanning csv file for name
+        detector = GenderDetector('uy')
+        self.assertEqual(detector.guess('Aaroon'), 'male')
 
 
 if __name__ == '__main__':
